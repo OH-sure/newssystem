@@ -1,0 +1,17 @@
+.formContainer{
+    width: 500px;
+    height: 300px;
+    text-align: center;
+    margin: 0 auto;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 30%;
+    bottom: 0;
+}
+h1{
+    font-size: 38px;
+    font-weight: 700;
+    font-family: "楷体";
+    color:rgb(214, 198, 198)
+}

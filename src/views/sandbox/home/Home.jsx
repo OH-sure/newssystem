@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactECharts from 'echarts-for-react';
 // import axios from 'axios'
 export default function home() {
 
@@ -12,7 +13,7 @@ export default function home() {
     <div>
       {/* <button onClick={getdata}>test</button> */}
       HOME
-      
+      {/* <ReactECharts option={this.getOption()} /> */}
     </div>
   )
 }

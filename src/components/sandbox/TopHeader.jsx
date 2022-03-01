@@ -16,13 +16,16 @@ function TopHeader(props) {
     setCollapased(!collapsed)
   }
 
+  const {role:{roleName},username}=JSON.parse(localStorage.getItem("token"))
+
   const menu = (
     <Menu >
       <Menu.Item key={1}>
-        超级管理员
+        {roleName}
       </Menu.Item>
 
       <Menu.Item danger onClick={() => {
+
           props.history.replace('/login')
         }} key={2}>退出</Menu.Item>
     </Menu>
@@ -34,7 +37,7 @@ function TopHeader(props) {
 
       <div style={{ 'float': 'right' }}>
         <span>
-          欢迎admin回来!
+          欢迎{username}回来!
         </span>
         <Dropdown overlay={menu}>
           <Avatar size={45} icon={<UserOutlined />} />

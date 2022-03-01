@@ -24,19 +24,21 @@ const iconList={
 
 function SideMenu(props) {
 
-const[menu,setMenu] = useState([])
-
+  
+  const[menu,setMenu] = useState([])
+  
   useEffect(() => {
     axios.get('http://localhost:3000/rights?_embed=children').then(
       res => {
         setMenu(res.data)
       }
-    )
-  }, [])
-
+      )
+    }, [])
+    
+    const {role:{rights}}=JSON.parse(localStorage.getItem("token"))
 //检查是否为页面接口
 const checkPagepermission=(item)=>{
-  return item.pagepermisson===1
+  return item.pagepermisson&&rights.includes(item.key)
 }
 //列表栏渲染函数
   const manuRender = (menuList) => {
